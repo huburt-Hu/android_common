@@ -2,7 +2,7 @@ package com.app.julie.common.mvp;
 
 import android.support.v4.app.Fragment;
 
-import com.app.julie.common.util.ToastUtil;
+import com.app.julie.common.util.ToastUtils;
 
 /**
  * Created by julie on 2017/2/28.
@@ -30,6 +30,6 @@ public abstract class BaseViewImpl<P extends BasePresenterImpl> extends Fragment
 
     @Override
     public void showToast(String msg) {
-        ToastUtil.showToast(getActivity(), msg);
+        ToastUtils.showShortToastSafe(msg);
     }
 }
