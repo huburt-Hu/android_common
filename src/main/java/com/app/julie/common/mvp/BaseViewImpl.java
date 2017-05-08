@@ -18,6 +18,18 @@ public abstract class BaseViewImpl<P extends BasePresenterImpl> extends Fragment
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        mPresenter.start();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mPresenter.finish();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();

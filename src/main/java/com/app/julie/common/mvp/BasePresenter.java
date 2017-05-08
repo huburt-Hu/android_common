@@ -6,4 +6,6 @@ package com.app.julie.common.mvp;
 
 public interface BasePresenter {
     void start();
+
+    void finish();
 }
