@@ -1,13 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.app.julie.common">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
-    <application android:allowBackup="true" android:label="@string/app_name"
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
         android:supportsRtl="true">
-
+        <service
+            android:name=".calculation.linked_list.MyIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
