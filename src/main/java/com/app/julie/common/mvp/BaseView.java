@@ -1,14 +1,23 @@
 package com.app.julie.common.mvp;
 
-/**
- * Created by julie on 2017/2/28.
- */
+import android.content.Context;
 
-public interface BaseView<P extends BasePresenter> {
-    void setPresenter(P presenter);
+import com.trello.rxlifecycle2.LifecycleTransformer;
+
+
+public interface BaseView<T extends BasePresenter> {
+
+    void setPresenter(T presenter);
 
     boolean isActive();
 
     void showToast(String msg);
 
+    Context getContext();
+
+    void showLoading();
+
+    void closeLoading();
+
+    <X> LifecycleTransformer<X> bindToRxLifecycle();
 }

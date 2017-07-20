@@ -183,7 +183,7 @@ public class ConvertUtils {
 
     /**
      * 字节数转合适内存大小
-     * <p>保留3位小数</p>
+     * <p>保留2位小数</p>
      *
      * @param byteNum 字节数
      * @return 合适内存大小
@@ -193,13 +193,13 @@ public class ConvertUtils {
         if (byteNum < 0) {
             return "shouldn't be less than zero!";
         } else if (byteNum < ConstUtils.KB) {
-            return String.format("%.3fB", byteNum + 0.0005);
+            return String.format("%.2fB", byteNum + 0.005);
         } else if (byteNum < ConstUtils.MB) {
-            return String.format("%.3fKB", byteNum / ConstUtils.KB + 0.0005);
+            return String.format("%.2fKB", byteNum * 1f / ConstUtils.KB + 0.005);
         } else if (byteNum < ConstUtils.GB) {
-            return String.format("%.3fMB", byteNum / ConstUtils.MB + 0.0005);
+            return String.format("%.2fMB", byteNum * 1f / ConstUtils.MB + 0.005);
         } else {
-            return String.format("%.3fGB", byteNum / ConstUtils.GB + 0.0005);
+            return String.format("%.2fGB", byteNum * 1f / ConstUtils.GB + 0.005);
         }
     }
 

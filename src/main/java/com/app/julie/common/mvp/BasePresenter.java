@@ -1,11 +1,15 @@
 package com.app.julie.common.mvp;
 
-/**
- * Created by julie on 2017/2/28.
- */
-
 public interface BasePresenter {
-    void start();
 
-    void finish();
+    /**
+     * 开启订阅关系，view加载完成后自动调用
+     */
+    void subscribe();
+
+    /**
+     * 解除订阅关系，通常在view被销毁前调用
+     */
+    void unSubscribe();
+
 }
